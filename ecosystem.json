@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "Star Wars API",
+      "script": "./server.js",
+      "instances": "4",
+      "exec_mode": "cluster",
+      "watch": true,
+      "autorestart": true,
+      "max_restarts": 10,
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

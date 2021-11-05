@@ -1,0 +1,5 @@
+{
+    "events": {
+        "crash": "sh -c 'npx kill-port 6000'"
+    }
+}

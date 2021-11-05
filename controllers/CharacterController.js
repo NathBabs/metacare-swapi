@@ -88,10 +88,15 @@ export async function listMovieCharacters(req, res, next) {
         let charactersNames = [];
 
         for (let index = 0; index < characters.length; index++) {
-            const peopleUrl = characters[index];
-            const response = await axios.get(peopleUrl);
-            const { name } = response.data;
-            charactersNames.push(name);
+            // add try catch block to continue loop on failed get requests
+            try {
+                const peopleUrl = characters[index];
+                const response = await axios.get(peopleUrl);
+                const { name } = response.data;
+                charactersNames.push(name);
+            } catch {
+                continue;
+            }
         }
 
         return res.status(200).send({

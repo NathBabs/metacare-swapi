@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "preinstall": "npm i -g pm2 && pm2 install pm2-logrotate",
-    "dev": "pm2 start ecosystem.json",
+    "dev": " pm2-runtime start ecosystem.json --env development && pm2 logs all",
     "commit": "cz"
   },
   "author": "Nathaniel Babalola",

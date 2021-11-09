@@ -98,6 +98,7 @@ export async function listSingleFilm(req, res, next) {
             }
         })
     } catch (error) {
+        console.error(error);
         return res.status(500).send(error);
     }
 }

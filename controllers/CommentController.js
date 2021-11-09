@@ -52,7 +52,11 @@ export const comment = async (req, res, next) => {
             }
         })
     } catch (error) {
-        console.log(error);
+        if (error?.response) {
+            //console.log(error.response);
+            return res.status(error.response.status).send(error.response.statusText);
+        }
+
         return res.status(500).send(error);
     }
 };
